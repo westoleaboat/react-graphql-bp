@@ -1,0 +1,37 @@
+// @mixin btn($bg, $color, $border) {
+//     @include anim;
+//     display: inline-block;
+//     padding: 2rem 2rem;
+//     text-decoration: none;
+//     background-color: $bg;
+//     // border: $border;
+//     color: $color;
+//     font-size: 16px;
+//     text-transform: uppercase;
+//     font-weight: 700;
+//     cursor: pointer;
+//     border-radius: 8px;
+
+//     &:hover {
+//         transform: scale(.90);
+//     }
+// }
+
+// .c-btn {
+//     @include anim;
+//     display: inline-block;
+//     padding: 2rem 2rem;
+//     text-decoration: none;
+//     background-color: $border-color;
+//     border: 1px solid $border-color;
+//     color: white;
+//     font-size: 16px;
+//     text-transform: uppercase;
+//     font-weight: 700;
+//     cursor: pointer;
+//     border-radius: 8px;
+
+//     &:hover {
+//         transform: scale(.90);
+//     }
+// }

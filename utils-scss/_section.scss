@@ -1,0 +1,9 @@
+@mixin section() {
+    padding: 2.5rem 0 2rem 0;
+    overflow-x: hidden;
+
+    @media(max-width: 740px) {
+        padding: 48px 0 48px 0;
+    }
+
+}

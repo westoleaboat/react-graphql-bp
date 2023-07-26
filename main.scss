@@ -1,0 +1,343 @@
+//importing utils
+@import "./utils-scss/all-utils";
+
+
+// mixin for gradient text
+@mixin gradient-text {
+    background: linear-gradient(to right, #f00, #ff9d00, #a600ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+// styles.scss
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+}
+
+#root {
+    min-height: 100%; //footer at bottom if no content.
+    display: flex;
+    flex-direction: column;
+
+
+    
+}
+
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Cabin', sans-serif;
+}
+
+h1 {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 63px;
+    margin: 0;
+}
+
+p {
+    font-size: 18px;
+    margin: 0;
+}
+
+header {
+    @include container;
+    @include section;
+
+    width: 976px; //for header
+
+    section {
+        display: flex;
+        gap: 40px;
+
+        nav {
+            display: flex;
+            align-items: center;
+            color: $gray;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+
+            img {
+                width: 100%;
+            }
+
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+    }
+
+}
+
+main {
+    
+    @include container;
+    flex: 1;
+
+    .title {
+        padding: 1.5rem 0 2rem 0;
+
+        p {
+            color: $gray;
+        }
+
+        h1 {
+            @include gradient-text;
+            font-size: 82px;
+
+        }
+    }
+
+    section {
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+
+            li {
+
+                .article {
+
+                    
+
+                    padding: 3rem 0rem;
+                    display: flex;
+                    border-top: 0.5px solid rgb(210, 214, 220);
+
+                    
+
+                    .formatedDate {
+                        min-width: 25%;
+
+                        dl {
+                            margin-top: 0.5rem;
+                            color: $gray;
+                            font-size: 18px;
+                        }
+                    }
+
+
+                    h2 {
+                        margin-top: 0;
+                        font-size: 30px;
+
+                        a {
+                            color: inherit;
+                            cursor: default;
+                        }
+                    }
+
+                    p {
+                        color: $gray;
+                    }
+
+                    
+
+                    &__text {
+
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2rem;
+                        width: 100%;
+                        font-size: 18px;
+
+                        span {
+                            display: inline-block;
+
+                            a {
+                            color: $linkpurple;
+                            width: auto;
+                            max-width: 100%;
+                            }
+                        }
+                        
+                    }
+
+                    @include media(lg) {
+                        flex-direction: column;
+                        
+                    }
+                }
+            }
+        }
+
+        hr {
+            margin: 0;
+            color: rgb(210, 214, 220);
+        }
+
+        
+
+    }
+
+    
+}
+
+footer {
+    background-color: #252F3F;
+    .container {
+        display: flex;
+        max-width: 975px;
+        margin: 0 auto;
+        justify-content: space-between;
+        padding: 1rem 0;
+        align-items: center;
+        ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+            gap: 40px;
+        }
+        p{ 
+            color: #d2d6dc;
+            display: flex;  
+            align-items: center;
+        }
+        a.icon {
+            max-width: 30px;
+            max-height: 30px;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+// SINGLE POST PAGE
+.post {
+    @include container;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2.5rem;
+
+        h2 {
+            font-size: 58px;
+            text-align: center;
+            margin: 0;
+        }
+
+        dl {
+            color: $gray;
+            font-size: 18px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        gap: 24px;
+        padding-bottom: 5rem;
+
+
+        &__column {
+            min-width: 25%;
+
+            .footer {
+
+                &__other-posts{
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+
+                    padding: 1.5rem 0;
+
+                    p {
+                        font-size: 14px;
+                        color: $gray;
+                    }
+
+                    a {
+                        font-size: 16px;
+                        color: $linkpurple;
+                    }
+                }
+
+                &__backlink {
+                    padding-top: 1.5rem;
+                    color: $linkpurple;
+
+                }
+            }
+
+            .description {
+                padding: 2.5rem 0;
+                .detail {
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+
+                    .img-container {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        overflow: hidden;
+
+                        img {
+                        width: 100%;
+                        object-fit: contain;
+                        }
+                    }
+                    .author{
+                        font-size: 16px;
+                    }
+                    .title {
+                        font-size: 16px;
+                        color: $gray;
+                        padding: 0;
+                    }
+                    
+                }
+            }
+
+        }
+
+        &__post-content{
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+
+            &__img-container {
+                max-width: 720px;
+
+
+                img {
+                    width: 100%;
+
+                }
+            }
+        }
+    }
+
+}
