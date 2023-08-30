@@ -1,4 +1,4 @@
-# React with GraphQL HeadlessCMS - see live @ 
+# React with GraphQL HeadlessCMS - live @ https://mindscape-chronicles.netlify.app/
 ![Screenshot_select-area_20230823210712](https://github.com/westoleaboat/react-graphql-bp/assets/68698872/b551f614-f50a-496c-887d-761308d85502)
 
 #### Overview
@@ -60,4 +60,8 @@ Remember to make sure you have Node.js and npm installed on your system before u
 node -v
 npm -v
 ```
-
+To build for manual deploy:
+```
+npm run build   # into public/ folder
+```
+You can drag & drop this `public/` folder in netlify for manual deploy
