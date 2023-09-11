@@ -126,41 +126,54 @@ const SinglePost = () => {
   return (
     <main class='post'>
 
-        <section class='post__header'>
-          <div class="formatedDate">
-            <dl>{formatDate(post.date)}</dl>
-          </div>
+      <article>
 
-        <h2>{post.title}</h2>
-        </section>
+          <section class='post__header'>
 
-        <section class='post__content'>
+            <div class="formatedDate">
+              <dl>{formatDate(post.date)}</dl>
+            </div>
 
-          <div class='post__content__column'>
+            <h2>{post.title}</h2>
 
-            <div class="description">
+          </section>
 
+          <section class='post__content'>
 
-              <div class="detail">
+            <dl class="post__content__detail">
 
-                <div class="img-container">
-                  {/* if no picture from query use hardcoded placeholder */}
-                  {post.author.picture && post.author.picture.url ? ( <img src={post.author.picture.url}/> ) : ( <img src='https://26159260.fs1.hubspotusercontent-eu1.net/hubfs/26159260/personalBlog/cv-big-photo2.png'/> )}
-                </div>
-
-                <div>
-                  <p class='author'>{post.author.name}</p>
-                  <p class='title'>{post.author.title}</p>
-                </div>
-
+              <div class="post__content__detail__img-container">
+                {/* if no picture from query use hardcoded placeholder */}
+                {post.author.picture && post.author.picture.url ? ( <img src={post.author.picture.url}/> ) : ( <img src='https://26159260.fs1.hubspotusercontent-eu1.net/hubfs/26159260/personalBlog/cv-big-photo2.png'/> )}
               </div>
 
-            </div>
-            <hr />
-            
-            <div class="footer">
+              <div>
+                <p class='post__content__detail__author'>{post.author.name}</p>
+                <p class='post__content__detail__title'>{post.author.title}</p>
+              </div>
 
-              <div class='footer__other-posts'>
+
+            </dl>
+
+            <div className="post__content__post-content">
+
+              <div class='post__content__post-content__img-container'>
+                {/* if no picture from query use hardcoded placeholder */}
+                {post.coverImage && post.coverImage.url ? (<img id='post-img' src={post.coverImage.url} /> ) : ( <img id='post-img' src='https://26159260.fs1.hubspotusercontent-eu1.net/hubfs/26159260/personalBlog/cover-img2.jpg' />)}
+              </div>
+
+              <hr />
+              
+              <div className='post__content_post-content__markdown'>
+                <ReactMarkdown>{post.content.markdown}</ReactMarkdown> {/* render MarkDown content (post body) */}
+              </div>
+            
+            </div>
+
+            <div class="post__content__footer">
+
+              <div class='post__content__footer__other-posts'>
+                <hr />
                 {/* if there is no nextPost or prevPost, dont show link option */}
                 {nextPost && (
                   <div>
@@ -179,24 +192,19 @@ const SinglePost = () => {
               </div>
               <hr />
 
-              <div class='footer__backlink'>
-                <a href='/'>← Back to the blog</a>
+              <div class='post__content__footer__backlink'>
+                <Link to={'/'}>← Back to the blog</Link>
               </div>
 
             </div>
 
-          </div>
 
-          <div className="post__content__post-content">
-            <div class='post__content__post-content__img-container'>
-              {/* if no picture from query use hardcoded placeholder */}
-              {post.coverImage && post.coverImage.url ? (<img id='post-img' src={post.coverImage.url} /> ) : ( <img id='post-img' src='https://26159260.fs1.hubspotusercontent-eu1.net/hubfs/26159260/personalBlog/cover-img2.jpg' />)}
-            </div>
-            <hr />
-            <ReactMarkdown>{post.content.markdown}</ReactMarkdown> {/* render MarkDown content (post body) */}
-          </div>
+            
 
-        </section>
+          </section>
+
+      </article>
+
     </main>
   );
 };

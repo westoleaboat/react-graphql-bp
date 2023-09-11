@@ -17,10 +17,10 @@ const Footer = () => {
     
   return (
     <footer>
+
       <div class="container">
 
-      <p>&copy; {new Date().getFullYear()} MINDSCAPE CHRONICLES & perennial philosofy.</p>
-      {/* <p>&copy; {new Date().getFullYear()} <a href='/'><img src='https://26159260.fs1.hubspotusercontent-eu1.net/hubfs/26159260/personalBlog/MINDSCAPEClogoHEAD.svg' /></a></p> */}
+        <p>&copy; {new Date().getFullYear()} MINDSCAPE CHRONICLES & perennial philosofy.</p>
 
         <ul>
             {socialLinks.map(({ name, icon, link }, index) => (
